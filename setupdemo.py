@@ -28,8 +28,6 @@ class DemoCreator:
             with open(infra_config, 'r') as f:
                 config = yaml.safe_load(f)
 
-            print(config)
-
             for key in ['config_loc', 'yaml_loc']:
                 if key in config['server']:
                     path = Path(config['server'][key])
@@ -317,5 +315,6 @@ if __name__ == '__main__':
         dc.print_run()
     else:
         dc.print_all()
+        dc.print_run()
 
     dc.write_demo_infra()
